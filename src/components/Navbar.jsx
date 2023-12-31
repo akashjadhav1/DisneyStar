@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useNavigate, NavLink} from "react-router-dom";
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 import { userData } from "../App";
@@ -16,14 +18,26 @@ function Navbar() {
   const {handleSearch, setSearchQuery}= useContext(userData)
 
   
-
+  const showToast = (msg, type) => {
+    toast[type](msg, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: type === "error" ? "dark" : "light",
+    });
+  };
 
 
   const handleLogOut = () => {
-    window.alert("Are you sure you want to log out")
-    localStorage.removeItem("userToken");
-    navigate("/login");
-    
+    if (window.confirm("Are you sure you want to log out")) {
+      localStorage.removeItem("userToken");
+      navigate("/login");
+      showToast("Logged out successfully", "success");
+    }
   };
 
 
@@ -132,6 +146,18 @@ const handleSearchButtonClick = async () => {
           </div>
         </div>
       </nav>
+      <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
     </div>
 
 
