@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
 import Navbar from "./Navbar";
-import { DataContext } from "./Carousel";
 import { useFavorites } from "./FavouritesContext";
 import { NavLink } from "react-router-dom";
+import Footer from "./Footer";
 
 function Favourite() {
   const Img = "https://image.tmdb.org/t/p/w500";
@@ -103,6 +102,8 @@ function Favourite() {
            
           </div>
         )}
+
+      <Footer/>
       </div>
     </>
   );
