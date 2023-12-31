@@ -143,11 +143,14 @@ function Login() {
                 >
                   Login
                 </button>
-                <p className="text-sm font-light text-gray-500 dark:text-gray-400 ">
-                  Don't have an account yet?{" "}
-                  <NavLink
+                <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400 ">
+                  Don't have an account?{" "}
+                 
+                </p>
+              <div className="text-center">
+              <NavLink
                     to="/register"
-                    className="text-blue-500 hover:underline dark:text-primary-500  mx-3"
+                    className="text-blue-500 hover:underline dark:text-primary-500"
                   >
                     Sign up
                   </NavLink>
@@ -157,7 +160,7 @@ function Login() {
                   >
                     Forgot password?
                   </NavLink>
-                </p>
+              </div>
               </form>
 
               <ToastContainer

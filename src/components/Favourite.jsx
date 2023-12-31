@@ -24,6 +24,7 @@ function Favourite() {
         ) : (
           <div className="mx-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
             {favourites.map((items, index) => (
+              <>
               <div className="flex w-80">
                 <div key={index} className="rounded">
                   <NavLink to={`/preview/${items.id}`}>
@@ -91,10 +92,15 @@ function Favourite() {
                     >
                       {items.original_title ? items.original_title : items.name}
                     </p>
+                    <hr />
                   </div>
                 </div>
+                
               </div>
+              
+              </>
             ))}
+           
           </div>
         )}
       </div>
