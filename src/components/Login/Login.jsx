@@ -16,8 +16,8 @@ function Login() {
  
   const navigate = useNavigate();
 
-  const errorPopUp = (msg) => {
-    toast.error(msg, {
+  const showToast = (msg, type) => {
+    toast[type](msg, {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -25,20 +25,7 @@ function Login() {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "dark",
-    });
-  };
-
-  const successPopUp = (msg) => {
-    toast.success(msg, {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
+      theme: type === "error" ? "dark" : "light",
     });
   };
 
@@ -62,7 +49,7 @@ function Login() {
 
       
       localStorage.setItem("userToken",token);
-      successPopUp("Login successfull");
+      showToast("Login successfull","success");
 
       setUserName("");
       setPassword("");
@@ -70,11 +57,11 @@ function Login() {
       
     } else {
       console.log(response.status, "error for login");
-      errorPopUp("Login error")
+      showToast("Login error","error")
     }
   } catch (error) {
     console.error("Error:", error);
-    errorPopUp("Invalid username or password");
+    showToast("Invalid username or password","error");
   }
 };
 

@@ -45,6 +45,7 @@ function Carousel() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots: false,
         },
       },
       {
@@ -54,6 +55,7 @@ function Carousel() {
           slidesToScroll: 1,
           speed: 5000,
           autoplaySpeed: 10000,
+          dots: false,
         },
       },
       // You can unslick at a given breakpoint now by adding:
@@ -83,6 +85,7 @@ function Carousel() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          dots: false,
         },
       },
       {
@@ -90,6 +93,7 @@ function Carousel() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false,
         },
       },
       // You can unslick at a given breakpoint now by adding:
