@@ -39,7 +39,7 @@ function Login() {
   };
 
   try {
-    const response = await axios.post("https://bookmyshowserver-4v2t.onrender.com/login", user);
+    const response = await axios.post("https://disneystarserver.onrender.com/login", user);
    
     
     if (response.status === 200) {
@@ -130,24 +130,20 @@ function Login() {
                 >
                   Login
                 </button>
-                <p className="text-sm text-center font-light text-gray-500 dark:text-gray-400 ">
+                <div className="flex">
+                <p className=" text-center font-light text-gray-500 dark:text-gray-400 ">
                   Don't have an account?{" "}
                  
-                </p>
-              <div className="text-center">
-              <NavLink
+                </p><NavLink
                     to="/register"
-                    className="text-blue-500 hover:underline dark:text-primary-500"
+                    className="text-blue-500 hover:underline mx-2 dark:text-primary-500"
                   >
                     Sign up
                   </NavLink>
-                  <NavLink
-                    href="#"
-                    className="text-sm mx-3 font-light text-primary-600 hover:underline dark:text-primary-500 "
-                  >
-                    Forgot password?
-                  </NavLink>
-              </div>
+                </div>
+                
+                 
+        
               </form>
 
               <ToastContainer

@@ -8,14 +8,14 @@ function SignUp() {
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  
+
   const navigate = useNavigate() 
 
-  
 
 
- 
-  
+
+
+
   const showToast = (msg, type) => {
     toast[type](msg, {
       position: "top-center",
@@ -31,30 +31,37 @@ function SignUp() {
 
   const handleSignUp = async (event) => {
     event.preventDefault();
-    if (username && password && password === confirmPassword) {
-      try {
-        const response = await axios.post("https://bookmyshowserver-4v2t.onrender.com/register", {
+  
+    try {
+      console.log("Attempting registration:", username);
+  
+      if (username && password && password === confirmPassword) {
+        const response = await axios.post("https://disneystarserver.onrender.com/register", {
           username: username,
           password: password,
         });
-
-        if (response.status === 200) {
+  
+        
+  
+        if (response.status === 201) {
           navigate('/login');
           showToast("Successfully registered", "success");
         } else {
-          showToast("Username already exists, try another username", "error");
+          showToast("Unexpected error occurred", "error");
         }
-      } catch (error) {
-        showToast("An error occurred. Please try again later.", "error");
+      } else {
+        showToast("Invalid input", "error");
       }
-    } else {
-      showToast("Invalid input", "error");
+    } catch (error) {
+      console.error("An error occurred during registration:", error);
+      showToast("An error occurred. Please try again later.", "error");
     }
   };
   
-  
+
+
     // Make an HTTP POST request to your server
-    
+
 
   return (
     <div >
@@ -73,16 +80,16 @@ function SignUp() {
           </div>
           <div className="w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:border-gray-700 ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8 bg-blue-200 rounded">
-              
+
                 <p className="text-xl font-bold leading-tight tracking-tight md:text-2xl text-blue-500 ">Create and account</p>
-              
+
               <form className="space-y-4 md:space-y-6 bg-blue-200" action="#">
                 <div className="bg-blue-200">
                   <label
                     htmlFor="email"
                     className="block mb-2 text-sm font-medium text-gray-900 dark:text-white "
                   >
-                    Your email
+                    Your Email
                   </label>
                   <input
                     type="email"
@@ -153,19 +160,19 @@ function SignUp() {
                     </label>
                   </div>
                 </div>
-               
-                
-                
+
+
+
                 <button
-                  
+
                   onClick={handleSignUp}
                   // disabled={!validateEmailOrPassword(username, password)}
                   className="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
-                  
+
                 >
                   Create an account
                 </button>
-                
+
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400 ">
                   Already have an account?{" "}
                   <NavLink

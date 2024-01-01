@@ -7,15 +7,15 @@ import {
 } from "react-router-dom";
 import SignupPage from './components/SignUpPage/SignUp';
 import LoginPage from './components/Login/Login';
-import { useState,createContext, useEffect, useContext } from "react";
+import { useState,createContext, useEffect,} from "react";
 import HomePage from "./components/HomePage";
 
 
 import PageView from "./components/PageView";
-import Navbar from "./components/Navbar";
+
 import Favourite from "./components/Favourite";
 import Carousel from "./components/Carousel";
-import { DataContext } from "./components/Carousel";
+
 import { FavoritesProvider } from "./components/FavouritesContext";
 
 
