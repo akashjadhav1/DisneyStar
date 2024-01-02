@@ -12,7 +12,7 @@ import {  useFavorites } from "./FavouritesContext";
 function Carousel() {
   const navigate = useNavigate();
   const { data, searchResults } = useContext(userData);
-  console.log(data)
+  
 
   const [category, setCategory] = useState("all");
   //const [favourites,setFavourites] = useState([]);
