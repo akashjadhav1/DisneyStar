@@ -18,7 +18,7 @@ import Carousel from "./components/Carousel";
 
 import { FavoritesProvider } from "./components/FavouritesContext";
 
-
+// create context
 export const userData = createContext();
 
 
@@ -49,10 +49,10 @@ useEffect(()=>{
 },[]);
 
 
-// console.log(data)
 
 
 
+//fetch search api 
 const handleSearch = async () => {
     try {
       const apiUrl = `https://api.themoviedb.org/3/search/movie?api_key=e6e995c1efafd0722f2c418185798878&query=${searchQuery}`;
@@ -71,13 +71,14 @@ const handleSearch = async () => {
     <div className="">
    
    
-   
+   {/* create context and send to another component */}
     <userData.Provider value={{ data, searchResults, handleSearch,setSearchQuery,}}>
     
     <FavoritesProvider>
     
 
     <Routes>
+    {/* handle routes */}
           
           <Route exact path="/" element={<HomePage/>} />
            <Route path="/login" element={<LoginPage/>} />

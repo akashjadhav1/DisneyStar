@@ -5,7 +5,7 @@ import { userData } from "../App";
 import Slider from "react-slick";
 import { NavLink, useNavigate } from "react-router-dom";
 
-import { FavoritesContext, useFavorites } from "./FavouritesContext";
+import {  useFavorites } from "./FavouritesContext";
 
 // export const DataContext = createContext()
 

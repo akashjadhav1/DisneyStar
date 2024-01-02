@@ -14,7 +14,7 @@ function SignUp() {
 
 
 
-
+// use toastify to show toast
 
   const showToast = (msg, type) => {
     toast[type](msg, {
@@ -29,6 +29,7 @@ function SignUp() {
     });
   };
 
+  // register the data onclick on handleSignup
   const handleSignUp = async (event) => {
     event.preventDefault();
   
@@ -60,7 +61,6 @@ function SignUp() {
   
 
 
-    // Make an HTTP POST request to your server
 
 
   return (

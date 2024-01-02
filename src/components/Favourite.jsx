@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 function Favourite() {
   const Img = "https://image.tmdb.org/t/p/w500";
-  // const favourites = useContext(DataContext);
+
 
   const { favourites, addToFavorites } = useFavorites();
 

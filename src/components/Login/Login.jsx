@@ -39,9 +39,10 @@ function Login() {
   };
 
   try {
+    // post the login data 
     const response = await axios.post("https://disneystarserver.onrender.com/login", user);
    
-    
+   //check the response status  
     if (response.status === 200) {
       const token = response.data.result.token;
       

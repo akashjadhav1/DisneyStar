@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
 
 function PageView() {
+  // use the hook useContext and get the data
   const {data,searchResults} = useContext(userData);
-  console.log(data);
+  
   const { id } = useParams();
   const movieId = parseInt(id);
 
@@ -16,6 +17,7 @@ function PageView() {
     <Navbar/>
       
       <div className="container mx-auto">
+      {/* map the data */}
         {data.map((items, index) =>
           items.id === movieId ? (
             <div key={index} className="md:flex p-6">
