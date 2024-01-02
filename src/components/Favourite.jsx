@@ -53,8 +53,7 @@ function Favourite() {
                     </div>
                     <div>
                       <p className="mx-2 font-light">
-                        {items.media_type.charAt(0).toUpperCase() +
-                          items.media_type.slice(1)}
+                        {items.media_type}
                       </p>
                     </div>
                     <div className="mt-1">
