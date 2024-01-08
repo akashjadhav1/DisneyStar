@@ -45,8 +45,9 @@ function SignUp() {
         
   
         if (response.status === 201) {
-          navigate('/login');
           showToast("Successfully registered", "success");
+          navigate('/login');
+          
         } else {
           showToast("Unexpected error occurred", "error");
         }

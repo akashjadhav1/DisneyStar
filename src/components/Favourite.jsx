@@ -29,7 +29,7 @@ function Favourite() {
                 <div key={index} className="rounded">
                   <NavLink to={`/preview/${items.id}`}>
                     <img
-                      className=" w-72 h-48 mx-5 border mt-3 rounded cursor-pointer"
+                      className=" w-72 h-48 mx-5 border mt-3 rounded cursor-pointer shadow-sky-500 shadow-xl transform transition-transform hover:scale-110 duration-1000 ease-in-out"
                       src={`${Img}${items.poster_path}`}
                       alt={items.title}
                     />

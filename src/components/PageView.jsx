@@ -20,9 +20,9 @@ function PageView() {
       {/* map the data */}
         {data.map((items, index) =>
           items.id === movieId ? (
-            <div key={index} className="md:flex p-6">
+            <div key={index} className="md:flex p-6 ">
               <img
-                className="border rounded md:w-72 md:h-96 mt-6 md:mr-8"
+                className="border rounded md:w-72 md:h-96 mt-6 md:mr-8 shadow-sky-500 shadow-xl transform transition-transform hover:scale-110 duration-1000 ease-in-out"
                 src={`${Img}${items.backdrop_path}`}
                 alt={items.title}
               />
@@ -101,9 +101,9 @@ function PageView() {
                 <p className="text-3xl md:text-5xl">
                   {items.original_title ? items.original_title : items.name}
                 </p>
-                <div className="flex mt-2 md:mt-7">
+                <div className="flex mt-2 md:mt-7  ">
                   <img
-                    className="w-7 h-7 md:w-9 h-9 mt-1"
+                    className="w-7 h-7 md:w-9 h-9 mt-1 shadow-sky-500 shadow-xl "
                     src="/images/imdb_logo.png"
                     alt="imdb_logo"
                   />

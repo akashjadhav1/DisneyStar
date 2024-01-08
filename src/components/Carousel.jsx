@@ -18,7 +18,7 @@ function Carousel() {
   //const [favourites,setFavourites] = useState([]);
   const { addToFavorites, favourites } = useFavorites();
 
- 
+
 
   const Img = "https://image.tmdb.org/t/p/w500";
 
@@ -189,10 +189,10 @@ function Carousel() {
         <Slider {...settings2} className="">
           {searchResults &&
             searchResults.map((items, index) => (
-              <div key={index} className=" rounded">
+              <div key={index} className=" rounded ">
                 <NavLink to={`/preview/${items.id}`}>
                   <img
-                    className="w-64 h-48 mx-10 border mt-3 rounded cursor-pointer"
+                    className="w-64 h-48 mx-10 border mt-3 rounded cursor-pointer shadow-sky-500 shadow-xl"
                     src={`${Img}${items.poster_path}`}
                     alt={items.title}
                     onClick={() => handleMovieClick(items.id)}
@@ -268,12 +268,11 @@ function Carousel() {
                 : item.media_type === "tv"
             )
             .map((items, index) => (
-              <div key={index} className=" rounded">
-                <div className=""></div>
-
-                <NavLink to={`/preview/${items.id}`}>
+              <div key={index} className=" rounded ">
+                
+                <NavLink to={`/preview/${items.id}`} >
                   <img
-                    className=" w-64 h-48 mx-10 border mt-3 rounded cursor-pointer"
+                    className=" w-64 h-48 mx-10 border mt-3 rounded cursor-pointer shadow-sky-500 shadow-xl "
                     src={`${Img}${items.poster_path}`}
                     alt={items.title}
                     onClick={() => handleMovieClick(items.id)}
@@ -345,10 +344,10 @@ function Carousel() {
 
         <Slider {...settings2} className="">
           {data.map((items, index) => (
-            <div key={index} className=" rounded">
+            <div key={index} className=" rounded ">
               <NavLink to={`/preview/${items.id}`}>
                 <img
-                  className="w-64 h-48 mx-10 border mt-3 rounded cursor-pointer"
+                  className="w-64 h-48 mx-10 border mt-3 rounded cursor-pointer shadow-sky-500 shadow-xl"
                   src={`${Img}${items.poster_path}`}
                   alt={items.title}
                 />
@@ -419,11 +418,11 @@ function Carousel() {
         <p>Recommended for you</p>
 
         <Slider {...settings2} className="">
-          {data.map((items, index) => (
-            <div key={index} className=" rounded">
+          {data.reverse().map((items, index) => (
+            <div key={index} className=" rounded ">
               <NavLink to={`/preview/${items.id}`}>
                 <img
-                  className="w-64 h-48 mx-10 border mt-3 rounded cursor-pointer"
+                  className="w-64 h-48 mx-10 border mt-3 rounded cursor-pointer shadow-sky-500 shadow-xl"
                   src={`${Img}${items.poster_path}`}
                   alt={items.title}
                   onClick={() => handleMovieClick(items.id)}
